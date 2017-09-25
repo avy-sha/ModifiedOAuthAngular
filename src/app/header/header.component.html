@@ -1,0 +1,23 @@
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+      <div class="navbar-header navbar-brand">Console</div>
+    </div>
+    <div class="row">
+      <a href="#" class="navbar-brand" style="color: white">Credentials</a>
+      <a href="#" class="navbar-brand" style="color: white">OAuth Consent Screen</a>
+      <a href="#" class="navbar-brand" style="color: white">Domain Verification</a>
+      <ul class="nav navbar-nav navbar-right">
+        <div class="dropdown" appDropDown>
+          <button class="btn btn-primary btn-lg dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">
+            Sign In <span class="caret"></span></button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">
+              <app-clientlogin></app-clientlogin></a></li>
+          </ul>
+        </div>
+      </ul>
+    </div>
+  </nav>
+  <app-credentials></app-credentials>
+  <app-domainverification></app-domainverification>
+  <app-oauthconsent></app-oauthconsent>
