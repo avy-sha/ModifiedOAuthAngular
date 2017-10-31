@@ -11,7 +11,7 @@
                                 onmouseenter="$(this).tooltip('show')">
           <span class="glyphicon glyphicon-pushpin"></span>
         </button>
-          <input type="text" class="form-control" id="Email address">
+          <input type="text" class="form-control" id="Email address" [(ngModel)]="emailAddress">
           <br>
           Product name as shown to users <button type="button" disabled class="btn btn-default"
                                                  data-placement="left"
@@ -20,11 +20,11 @@
           <span class="glyphicon glyphicon-pushpin"></span>
         </button>
           <label for="Product name shown to users"></label>
-          <input type="text" class="form-control" id="Product name shown to users">
+          <input type="text" class="form-control" id="Product name shown to users" [(ngModel)]="productName">
           <br>
           Homepage URL (Optional)
           <label for="Homepage URL"></label>
-          <input type="text" class="form-control" id="Homepage URL">
+          <input type="text" class="form-control" id="Homepage URL" [(ngModel)]="homePageURL">
           <br>
           Product Logo Url (Optional) <button type="button" disabled class="btn btn-default"
                                               data-placement="left"
@@ -33,21 +33,21 @@
           <span class="glyphicon glyphicon-pushpin"></span>
         </button>
           <label for="Logo URL"></label>
-          <input type="text" class="form-control" id="Logo URL">
-          <img src="abc">This is how your logo will look in 120x120
+          <input type="text" class="form-control" id="Logo URL" [(ngModel)]="productlogoURL">
+          <img src="../../assets/abc.png">This is how your logo will look in 120x120
           <br>
           <br>
           Privacy Policy Url <br>
-          Optional until you deploy your app
+          <small>Optional until you deploy your app</small>
           <label for="Privacy Policy"></label>
-          <input type="text" class="form-control" id="Privacy Policy">
+          <input type="text" class="form-control" id="Privacy Policy" [(ngModel)]="privacyPolicyURL">
           <br>
           Terms and Conditions URL (Optional)
           <label for="Terms and Conditions URL"></label>
-          <input type="text" class="form-control" id="Terms and Conditions URL">
+          <input type="text" class="form-control" id="Terms and Conditions URL" [(ngModel)]="termsAndContionsURL">
           <br>
-          <button class="btn btn-primary btn-xs">Save</button>
-          <button class="btn btn-default btn-xs">Cancel</button>
+          <button class="btn btn-primary btn-md" (click)="onSave()">Save</button>
+          <button class="btn btn-default btn-md" (click)="onCancel()">Cancel</button>
         </div>
         </div>
       </div>

@@ -1,23 +1,25 @@
 <nav class="navbar navbar-light bg-primary">
-    <div class="container-fluid">
-      <div class="navbar-header navbar-brand">Console</div>
-    </div>
-    <div class="row">
-      <a href="#" class="navbar-brand" style="color: white">Credentials</a>
-      <a href="#" class="navbar-brand" style="color: white">OAuth Consent Screen</a>
-      <a href="#" class="navbar-brand" style="color: white">Domain Verification</a>
-      <ul class="nav navbar-nav navbar-right">
-        <div class="dropdown" appDropDown>
-          <button class="btn btn-primary btn-lg dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">
-            Sign In <span class="caret"></span></button>
-          <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">
-              <app-clientlogin></app-clientlogin></a></li>
-          </ul>
-        </div>
+  <div class="container-fluid">
+    <div class="navbar-header navbar-brand">Console</div>
+  </div>
+  <div class="row">
+    <div class="col-x-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <ul class="nav nav-tabs">
+        <li routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/Credentials" class="navbar-brand" style="color: black">Credentials</a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="/OAuthConsentScreen" class="navbar-brand" style="color: black">OAuth Consent Screen</a>
+        </li>
+        <li routerLinkActive="active">
+          <a routerLink="/DomainVerification" class="navbar-brand" style="color: black" disabled="">Domain Verification</a>
+        </li>
       </ul>
     </div>
-  </nav>
-  <app-credentials></app-credentials>
-  <app-domainverification></app-domainverification>
-  <app-oauthconsent></app-oauthconsent>
+  </div>
+</nav>
+<div class="row">
+  <div class="col-x-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <router-outlet></router-outlet>
+  </div>
+</div>

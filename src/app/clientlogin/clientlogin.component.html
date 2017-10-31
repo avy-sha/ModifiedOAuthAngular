@@ -1,13 +1,39 @@
 <div class="panel panel-primary white text">
   <div class="panel-heading">Sign In</div>
   <div class="panel-body">
-    Username
-    <label for="Username"></label>
-    <input type="text" class="form-control" id="Username">
-    <br>
-    Password
-    <label for="Password"></label>
-    <input type="password" class="form-control" id="Password">
-    <button class="btn btn-primary btn-md" type="submit">Submit</button>
+    <form (ngSubmit)="onSubmit()" #f="ngForm">
+      <div class="form-group" >
+        <label for="email" class="text-info">E-Mail Id:</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          placeholder="Enter your email-id"
+          name="email"
+          required
+          [(ngModel)]="email">
+        <!--<span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email!</span>-->
+      </div>
+      <div
+        id="user-data"
+        ngModelGroup="userData"
+        #userData="ngModelGroup">
+        <div class="form-group">
+          <label for="pass" class="text-info">Password:</label>
+          <input
+            type="password"
+            id="pass"
+            class="form-control"
+            placeholder="Enter your Password"
+            name="pass"
+            required
+            [(ngModel)]="pass">
+        </div>
+      </div>
+      <button
+        class="btn btn-primary"
+        type="submit"
+        [disabled]="!f.valid">Submit</button>
+    </form>
   </div>
 </div>

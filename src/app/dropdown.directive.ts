@@ -8,6 +8,9 @@ export class DropdownDirective {
   @HostBinding('class.open') isOpen = false;
 
   @HostListener('click') toggleOpen() {
-    this.isOpen = !this.isOpen;
+    this.isOpen = true;
+  }
+  @HostListener('dblclick') toggleClose() {
+    this.isOpen = false;
   }
 }
