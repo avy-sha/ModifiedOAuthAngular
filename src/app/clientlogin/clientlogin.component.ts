@@ -17,9 +17,10 @@ export class ClientloginComponent implements OnInit {
   public static token;
 
   @ViewChild('f') signupForm: NgForm;
-  submitted=false;
+  submitted = false ;
+  authentic = false;
 
-  constructor(private http:Http, private router: Router, private authService: AuthService) {
+  constructor(private http: Http, private router: Router, private authService: AuthService) {
   }
 
   onUpdateUsername(event: Event) {
@@ -33,19 +34,20 @@ export class ClientloginComponent implements OnInit {
 
 
   onSubmit() {
-    var JSONobj = {
-      "userId": this.email,
-      "password": this.pass };
+    const JSONobj = {
+      'userId': this.email,
+      'password': this.pass };
     this.submitted = true;
     this.signupForm.reset();
     this.authService.login();
-    this.router.navigate(['/Credentials']);
-    return this.http.post('http://localhost:1337/auth', JSONobj).
+    return this.http.post('http://modifiedoauth-env.us-east-2.elasticbeanstalk.com/auth', JSONobj).
     subscribe(
       (response) => {
         ClientloginComponent.token = response.json();
-        ClientloginComponent.token = ClientloginComponent.token["token"];
+        ClientloginComponent.token = ClientloginComponent.token['token'];
         console.log(ClientloginComponent.token);
+        this.router.navigate(['/Credentials']);
+        this.authentic = true;
       },
       (error) => console.log(error)
     );

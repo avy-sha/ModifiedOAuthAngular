@@ -34,6 +34,7 @@
         class="btn btn-primary"
         type="submit"
         [disabled]="!f.valid">Submit</button>
+      <span class="help-block" *ngIf=" !authentic && submitted ">Please enter a valid email!</span>
     </form>
   </div>
 </div>

@@ -41,7 +41,7 @@ export class WebAppComponent implements OnInit {
       "scopes": "basic",
       "type": "public",
       "redirectURI": this.redirectURI};
-    return this.http.post('http://localhost:1337/client/register', JSONobj).
+    return this.http.post('http://modifiedoauth-env.us-east-2.elasticbeanstalk.com/client/register', JSONobj).
     subscribe(
       (response) => {
         this.tokken = response.json();

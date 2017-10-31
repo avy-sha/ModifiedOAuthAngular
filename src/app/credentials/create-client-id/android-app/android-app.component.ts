@@ -1,3 +1,4 @@
+
 import {Component, OnInit} from '@angular/core';
 import { ClientloginComponent } from "../../../clientlogin/clientlogin.component";
 import { Http } from "@angular/http";
@@ -43,7 +44,7 @@ export class AndroidAppComponent implements OnInit {
     "scopes": "basic",
     "type": "private",
     "redirectURI": this.domain};
-    return this.http.post('http://localhost:1337/client/register', JSONobj).
+    return this.http.post('http://modifiedoauth-env.us-east-2.elasticbeanstalk.com/client/register', JSONobj).
     subscribe(
       (response) => {
         this.tokken = response.json();
